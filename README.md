@@ -1,15 +1,22 @@
 # Micro MVC PHP Framework
-A micro MVC framework for PHP complete with a build environment. Comes with jQuery, Twitter Bootstrap 4 and Font Awesome pre-installed. This tiny framework was inspired by CakePHP and Larvel, and supports composer vendors, mysql and sqlite.
+A very simple straight forward micro MVC framework for PHP complete with a build environment. Comes with jQuery, Twitter Bootstrap 4 and Font Awesome pre-installed. This tiny framework was inspired by CakePHP and Larvel, and supports composer vendors, mysql and sqlite.
 
 # Installation
 Run the following commands inside the root directory
 - `composer install`
 - `npm install`
 
+# Setup Webserver
+Point document root to `app/public`
+
+# Setting Up Config
+Copy `app/config/core.php.default` to `app/config/core.php` and Make changes to the file to suit your needs
+
 # Compiling JS and SCSS
 Simply type the command `gulp` inside the root directory
 
 # Setting up a MVC
+
 ## Model
 **File**: `app/models/User.php`
 ```php
