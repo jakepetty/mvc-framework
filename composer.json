@@ -1,0 +1,13 @@
+{
+    "name": "developer/mvc",
+    "description": "Micro MVC PHP framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jake Petty",
+            "email": "support@vexcon.net"
+        }
+    ],
+    "require": {
+    }
+}

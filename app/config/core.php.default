@@ -1,0 +1,16 @@
+<?php
+$_ENV = [
+    'app' => [
+        'url' => 'http://localhost'
+    ],
+    'security' => [
+        'salt' => 'sud8fs78dfts54s54d4hgq22g8hg823g' // Change This
+    ],
+    'database' => [
+        'engine' => 'mysql', // mysql or sqlite
+        'host' => '',
+        'database' => '',
+        'username' => '',
+        'password' => ''
+    ]
+];

@@ -1,0 +1,23 @@
+{
+  "name": "micro-mvc-framework",
+  "version": "1.0.0",
+  "description": "Micro MVC PHP framework",
+  "main": "public/index.php",
+  "directories": {},
+  "scripts": {
+    "watch": "sass resources/scss/app.scss app/public/css/app.css --watch",
+    "serve": "php -S 0.0.0.0:8000 -t app/public"
+  },
+  "author": "Jake Petty <jake.petty@vexcon.net>",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "bootstrap": "^4.3.1",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "jquery": "^3.4.0",
+    "popper.js": "^1.15.0"
+  }
+}
