@@ -26,6 +26,11 @@ class View
         // Define the view file
         $this->view = __VIEWS__ . DS . $path . '.php';
 
+        // Display this error when view file is missing
+        if (!file_exists($this->view)) {
+            $this->view = __VIEWS__ . DS . 'errors' . DS . 'missing_view.php';
+        }
+
         // Render the layout
         require __VIEWS__ . DS . 'layouts' . DS . 'default.php';
     }
