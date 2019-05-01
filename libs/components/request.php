@@ -14,4 +14,16 @@ class Request
         }
         return $_POST;
     }
+
+    // Return uploaded files if any
+    public static function file($key = null)
+    {
+        if ($key) {
+            if (array_key_exists($key, $_FILES)) {
+                return $_FILES[$key];
+            }
+            return false;
+        }
+        return $_FILES;
+    }
 }
