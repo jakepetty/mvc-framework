@@ -52,12 +52,12 @@ class Model
      * 
      * @return mixed
      */
-    public function read($fields = ['*'], $id = null)
+    public function read($fields = [], $id = null)
     {
         if (!empty($_fields)) {
             $fields = '`' . implode('`, `', $fields) . '`';
         } else {
-            $fields = '`*`';
+            $fields = '*';
         }
         $sql = sprintf("SELECT %s FROM `%s` WHERE `%s` = :id LIMIT 1", $fields, $this->table, $this->primary_key);
         $stmt = $this->db->prepare($sql);
@@ -76,7 +76,7 @@ class Model
      * 
      * @return array
      */
-    public function find($conditions = [], $fields = ['*'], $limit = 1000)
+    public function find($conditions = [], $fields = [], $limit = 1000)
     {
         $query = '';
         foreach ($conditions as $key => $val) {
@@ -85,7 +85,7 @@ class Model
         if (!empty($fields)) {
             $fields = '`' . implode('`, `', $fields) . '`';
         } else {
-            $fields = '`*`';
+            $fields = '*';
         }
         if (empty($query)) {
             $sql = sprintf("SELECT %s FROM `%s` LIMIT %s", $fields, $this->table, $limit);
@@ -110,13 +110,13 @@ class Model
      * 
      * @return array
      */
-    public function findFirst($conditions = [], $fields = ['*'])
+    public function findFirst($conditions = [], $fields = [])
     {
         // Setup Fields
         if (!empty($fields)) {
             $fields = '`' . implode('`, `', $fields) . '`';
         } else {
-            $fields = '`*`';
+            $fields = '*';
         }
         // Setup WHERE clause
         $query = '';
