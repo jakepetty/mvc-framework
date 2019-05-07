@@ -18,8 +18,7 @@ class Model
     {
         $this->db = Database::getInstance();
         if (!$this->table) {
-            $this->table = Inflector::tableize(get_called_class());
-
+            $this->table = Inflector::tableize(str_replace(__NAMESPACE__ . '\\', null, get_called_class()));
             // Setup Automatic created and modified field population
             switch (config('database.engine')) {
                 case 'sqlite':
@@ -202,5 +201,22 @@ class Model
         $stmt->execute();
 
         return $stmt->rowCount();
+    }
+    
+    /**
+     * Executes an SQL statement
+     * 
+     * @param string $sql The query you want to run
+     * 
+     * @return array
+     */
+    public function query($sql)
+    {
+        $stmt = $this->db->prepare($sql);
+
+        if ($stmt->execute()) {
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return [];
     }
 }
