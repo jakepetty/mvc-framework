@@ -33,7 +33,10 @@ class Auth
             }
         }
     }
-
+    public static function hash($password)
+    {
+        return sha1(config('security.salt') . $password);
+    }
     public static function user($key = null)
     {
         // If logged in
