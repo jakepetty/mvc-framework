@@ -3,6 +3,17 @@ namespace App;
 
 class Request
 {
+    // Check request method
+    public static function is($type)
+    {
+        return $_SERVER['REQUEST_METHOD'] == strtoupper($type);
+    }
+
+    // Return $_REQUEST data
+    public static function data()
+    {
+        return $_REQUEST;
+    }
     // Create a structured way to access $_POST
     public static function all()
     {
